@@ -3,6 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <title>BOUTIQUE</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9CQ93X2R47"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9CQ93X2R47');
+  </script>
+
+  <!-- Styles -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
     body {
@@ -31,14 +42,9 @@
     .menu a:hover {
       background-color: #cc0000;
     }
-    /* Animation verticale */
     @keyframes verticalBounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-20px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
     }
     h1 {
       font-family: 'Playfair Display', serif;
@@ -70,15 +76,9 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       box-sizing: border-box;
     }
-    .col1 {
-      background-color: #e6ffe6;
-    }
-    .col2 {
-      background-color: #ffe6e6;
-    }
-    .col3 {
-      background-color: #ffffe6;
-    }
+    .col1 { background-color: #e6ffe6; }
+    .col2 { background-color: #ffe6e6; }
+    .col3 { background-color: #ffffe6; }
     .vertical-col {
       background-color: white;
       border: 2px solid #4da6ff;
@@ -93,16 +93,20 @@
       font-size: 24px;
       color: #333;
     }
-    ul, ol {
-      padding-left: 20px;
-    }
-    p {
-      line-height: 1.6;
-    }
+    ul, ol { padding-left: 20px; }
+    p { line-height: 1.6; }
   </style>
 </head>
+
 <body>
 
+  <!-- Bloc photo de profil -->
+  <div style="text-align: center; margin-top: 20px;">
+    <img src="profil.jpeg" alt="Photo de profil" style="width: 150px; height: 150px; border-radius: 50%; border: 3px solid #4da6ff; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+    <p style="font-weight: bold; margin-top: 10px;">PHAMBU VUNDULA OMER</p>
+  </div>
+
+  <!-- Menu -->
   <div class="menu">
     <a href="partenaire.html">PARTENAIRES</a>
     <a href="photos.html">NOS PHOTOS</a>
@@ -110,8 +114,10 @@
     <a href="points.html">POINTS DE VENTE</a>
   </div>
 
+  <!-- Titre principal -->
   <h1>BOUTIQUE</h1>
 
+  <!-- Trois colonnes -->
   <div class="columns">
     <div class="colonne col1">
       <strong>NOS ACTIVITÉS</strong><br><br>
@@ -150,6 +156,7 @@
     </div>
   </div>
 
+  <!-- Info générale -->
   <div class="vertical-col">
     <h3>INFO GÉNÉRAL</h3>
     <p><strong>CONTACT :</strong></p>
