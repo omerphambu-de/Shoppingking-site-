@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BOUTIQUE</title>
 
   <!-- Google Analytics -->
@@ -13,9 +14,21 @@
     gtag('config', 'G-9CQ93X2R47');
   </script>
 
-  <!-- Styles -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(rgba(255,255,255,0.30), rgba(255,255,255,0.30)),
+                  url('image.avif') no-repeat center center fixed;
+      background-size: cover;
+    }
 
     a {
       text-decoration: none;
@@ -26,93 +39,73 @@
       text-decoration: underline;
     }
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(rgba(255,255,255,0.30), rgba(255,255,255,0.30)),
-                  url('image.avif') no-repeat center center fixed;
-      background-size: cover;
-    }
-
     header {
-      background-color: #002244;  /* bleu pro foncé */
-      padding: 15px 30px;
+      background-color: #002244;
+      padding: 15px 20px;
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      flex-wrap: wrap;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      border: 2px solid white;   /* bordure blanche */
+      border: 2px solid white;
       padding: 5px 12px;
       border-radius: 8px;
-      background-color: rgba(0, 34, 68, 0.6); /* fond bleu semi-transparent */
+      background-color: rgba(0, 34, 68, 0.6);
+      margin-bottom: 10px;
     }
 
     .logo img {
-      height: 55px;
-      margin-right: 15px;
+      height: 50px;
+      margin-right: 10px;
     }
 
-    /* Animation glow + bounce sur le texte BOUTIQUALITÉ */
+    .logo span {
+      font-size: 24px;
+      font-weight: 800;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      animation: glowPulse 3s ease-in-out infinite, bounceFloat 4s ease-in-out infinite;
+      cursor: default;
+    }
+
     @keyframes glowPulse {
       0%, 100% {
-        text-shadow:
-          0 0 6px #00aaff,
-          0 0 12px #00aaff,
-          0 0 20px #00aaff,
-          0 0 30px #00c0ff,
-          0 0 40px #00c0ff;
+        text-shadow: 0 0 6px #00aaff, 0 0 12px #00aaff, 0 0 20px #00aaff;
         color: #00aaff;
       }
       50% {
-        text-shadow:
-          0 0 3px #0088cc,
-          0 0 6px #0088cc,
-          0 0 10px #0099dd,
-          0 0 15px #00aaff,
-          0 0 20px #00aaff;
+        text-shadow: 0 0 3px #0088cc, 0 0 6px #0088cc, 0 0 10px #0099dd;
         color: #33bbff;
       }
     }
 
     @keyframes bounceFloat {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+      50% { transform: translateY(-6px); }
     }
 
-    .logo span {
-      font-size: 28px;
-      font-weight: 900;
-      font-family: 'Playfair Display', serif;
-      letter-spacing: 6px;
-      text-transform: uppercase;
-      user-select: none;
-      animation: glowPulse 3s ease-in-out infinite, bounceFloat 4s ease-in-out infinite;
-      cursor: default;
+    header nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     header nav a {
       color: #aaddff;
-      margin: 0 18px;
       font-weight: 600;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      transition: color 0.3s ease;
-    }
-
-    header nav a:hover {
-      color: #00aaff;
-      text-decoration: underline;
     }
 
     .menu {
       display: flex;
-      justify-content: space-around;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
       background-color: #333;
       padding: 12px;
     }
@@ -123,50 +116,40 @@
       font-weight: bold;
       padding: 10px 15px;
       border-radius: 8px;
-      transition: background-color 0.3s ease;
     }
 
-    .menu a:hover {
-      background-color: #cc0000;
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      background-color: #4da6ff;
+      color: white;
+      padding: 20px;
+      font-size: clamp(2rem, 5vw, 4rem);
+      animation: verticalBounce 3s ease-in-out infinite;
+      margin: 20px 0;
     }
 
     @keyframes verticalBounce {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
-
-    h1 {
-      font-family: 'Playfair Display', serif;
-      background-color: #4da6ff;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: clamp(2rem, 5vw, 4rem);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      margin: 20px 0;
-      animation: verticalBounce 3s ease-in-out infinite;
+      50% { transform: translateY(-10px); }
     }
 
     .columns {
       display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-      padding: 20px;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
     }
 
     .colonne {
-      width: 30%;
+      width: 100%;
+      max-width: 320px;
       background-color: white;
       padding: 20px;
-      margin: 10px;
-      border: 2px solid #3399ff;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      box-sizing: border-box;
-      position: relative;
+      border: 2px solid #3399ff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     .col1 { background-color: #e6ffe6; }
@@ -175,92 +158,32 @@
 
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
+      margin-top: 15px;
+      padding: 10px 20px;
       background-color: #004080;
       color: white;
       font-weight: 600;
       border-radius: 8px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 64, 128, 0.4);
     }
 
     .btn:hover {
       background-color: #0066cc;
-      box-shadow: 0 6px 14px rgba(0, 102, 204, 0.6);
     }
 
-    .grille-sites {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 20px;
-      padding: 30px;
-      justify-items: center;
-    }
-
-    .carte {
-      width: 100px;
-      text-align: center;
-      background-color: #fff;
+    #info-general {
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 2px solid #004080;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 10px;
-      transition: transform 0.3s;
+      width: 95%;
+      max-width: 900px;
     }
 
-    .carte:hover {
-      transform: scale(1.05);
-    }
-
-    .carte img {
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
-    }
-
-    .carte p {
-      margin-top: 10px;
-      font-size: 14px;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .video-int {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      width: 120px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    #accueil {
-      padding: 60px 20px;
-      text-align: center;
-      background: linear-gradient(to right, #f0f4f8, #dceeff);
-    }
-
-    #accueil h2 {
-      font-size: 2.2rem;
+    #info-general h3 {
+      font-size: 1.5rem;
       color: #004080;
-      margin-bottom: 20px;
-    }
-
-    #accueil p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    #accueil a {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 25px;
-      background-color: #004080;
-      color: white;
-      border-radius: 8px;
-      font-size: 1rem;
+      margin-bottom: 15px;
     }
 
     footer {
@@ -270,22 +193,50 @@
       padding: 20px;
       margin-top: 40px;
     }
+
+    /* RESPONSIVE MOBILE */
+    @media (max-width: 600px) {
+      .logo {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .columns {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header nav {
+        justify-content: flex-start;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .menu a {
+        flex: 1 1 45%;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Barre de navigation avec logo -->
   <header>
     <div class="logo">
-      <img src="logo.png" alt="Logo BOUTIQUALITÉ" />
-      <span>BOUTIQUALITÉ</span>
+      <img src="logo.png" alt="Logo">
+      <span>Boutiqualité</span>
     </div>
     <nav>
-      <a href="#accueil">ACCUEIL</a>
+      <a href="#accueil">Accueil</a>
     </nav>
   </header>
 
-  <!-- Menu secondaire -->
   <div class="menu">
     <a href="partenaire.html">PARTENAIRES</a>
     <a href="photos.html">NOS PHOTOS</a>
@@ -295,12 +246,9 @@
     <a href="Fournisseur.html">FOURNISSEUR DE PRODUITS</a>
     <a href="Activites.html">ACTIVITÉ DE BOUTIQUE</a>
   </div>
-
-  <!-- Colonnes -->
   <div class="columns">
     <div class="colonne col1">
       <strong>NOS ACTIVITÉS</strong><br><br>
-      BOUTIQUE présente ses activités :
       <ul>
         <li>PRODUCTION</li>
         <li>VENTE</li>
@@ -310,9 +258,9 @@
       </ul>
       <a href="Activites.html" class="btn">En savoir plus</a>
     </div>
+
     <div class="colonne col2">
       <strong>AVEC QUI NOUS TRAVAILLONS</strong><br><br>
-      Notre BOUTIQUE travaille en partenariat avec :
       <ol>
         <li>NIKE</li>
         <li>ZARA</li>
@@ -324,9 +272,9 @@
       </ol>
       <a href="partenaire.html" class="btn">Voir nos partenaires</a>
     </div>
+
     <div class="colonne col3">
       <strong>VALEURS ET OBJECTIFS</strong><br><br>
-      Notre boutique vise à :
       <ul>
         <li>Satisfaire les clients</li>
         <li>Promouvoir la qualité</li>
@@ -337,29 +285,25 @@
     </div>
   </div>
 
-  <!-- Info général -->
-  <div id="info-general" class="vertical-col" style="position: relative; background-color: #f9f9f9; border: 2px solid #004080; padding: 25px; border-radius: 12px; width: 95%; margin: 30px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); font-family: Arial, sans-serif;">
-    <h3 style="font-weight: bold; font-size: 1.8rem; color: #004080; margin-bottom: 20px;">
-      📌 INFO GÉNÉRAL
-      <p> Nos contacts:</p> 
-    </h3>
-    <div style="margin-bottom: 20px;">
-      <p><strong>📞 Téléphone :</strong> +243 0904649754</p>
-      <p><strong>✉️ Email :</strong> contact@boutique.com</p>
-      <p><strong>📘 Facebook :</strong> Boutiqualité</p>
-      <p><strong>💬 WhatsApp :</strong> 0859760507</p>
-      <p><strong>📍 Adresse :</strong> Boma, RDC</p>
-    </div>
+  <div id="info-general">
+    <h3>📌 INFO GÉNÉRAL</h3>
+    <p><strong>📞 Téléphone :</strong> +243 0904649754</p>
+    <p><strong>✉️ Email :</strong> contact@boutique.com</p>
+    <p><strong>📘 Facebook :</strong> Boutiqualité</p>
+    <p><strong>💬 WhatsApp :</strong> 0859760507</p>
+    <p><strong>📍 Adresse :</strong> Boma, RDC</p>
 
-    <div style="margin-top: 15px;">
-      <div style="border-top: 1px solid #ccc; padding-top: 15px;">
-        <h4 style="font-size: 1.3rem; color: #333; margin-bottom: 10px;">💬 Commentaires sur notre boutique :</h4>
-        <p style="margin: 10px 0; font-style: italic;">“Service rapide et très professionnel. J’ai reçu ma commande en moins de 24h !” – <strong>Marie K.</strong></p>
-        <p style="margin: 10px 0; font-style: italic;">“Produits de qualité à un prix raisonnable. Je recommande vivement.” – <strong>Patrick M.</strong></p>
-        <p style="margin: 10px 0; font-style: italic;">“Super service client, très à l’écoute. Merci pour l’accueil.” – <strong>Jacques T.</strong></p>
-      </div>
+    <div style="margin-top: 15px; border-top: 1px solid #ccc; padding-top: 15px;">
+      <h4>💬 Commentaires sur notre boutique :</h4>
+      <p><i>“Service rapide et très professionnel.”</i> – <strong>Marie K.</strong></p>
+      <p><i>“Produits de qualité à un prix raisonnable.”</i> – <strong>Patrick M.</strong></p>
+      <p><i>“Super service client, très à l’écoute.”</i> – <strong>Jacques T.</strong></p>
     </div>
   </div>
+
+  <footer>
+    © 2025 Boutiqualité - Tous droits réservés.
+  </footer>
 
 </body>
 </html>
