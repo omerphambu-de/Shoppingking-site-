@@ -1,9 +1,12 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BOUTIQUE</title>
+  <title>Boutiqualité</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9CQ93X2R47"></script>
@@ -14,6 +17,7 @@
     gtag('config', 'G-9CQ93X2R47');
   </script>
 
+  <!-- Fonts & Styles -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
@@ -25,18 +29,27 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(rgba(255,255,255,0.30), rgba(255,255,255,0.30)),
+      background: linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0.35)),
                   url('image.avif') no-repeat center center fixed;
       background-size: cover;
+      color: #222;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     a {
       text-decoration: none;
-      color: inherit;
+      color: #007acc;
+      transition: color 0.3s ease;
     }
 
-    a:hover {
+    a:hover,
+    a:focus {
+      color: #005fa3;
       text-decoration: underline;
+      outline: none;
     }
 
     header {
@@ -47,6 +60,7 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
     }
 
     .logo {
@@ -55,8 +69,9 @@
       border: 2px solid white;
       padding: 5px 12px;
       border-radius: 8px;
-      background-color: rgba(0, 34, 68, 0.6);
+      background-color: rgba(0, 34, 68, 0.7);
       margin-bottom: 10px;
+      user-select: none;
     }
 
     .logo img {
@@ -65,22 +80,24 @@
     }
 
     .logo span {
-      font-size: 24px;
-      font-weight: 800;
+      font-size: 28px;
+      font-weight: 900;
       font-family: 'Playfair Display', serif;
-      letter-spacing: 4px;
+      letter-spacing: 5px;
       text-transform: uppercase;
-      animation: glowPulse 3s ease-in-out infinite, bounceFloat 4s ease-in-out infinite;
+      animation: glowPulse 4s ease-in-out infinite, bounceFloat 4s ease-in-out infinite;
       cursor: default;
+      color: #33bbff;
+      text-shadow: 0 0 10px #33bbff;
     }
 
     @keyframes glowPulse {
       0%, 100% {
-        text-shadow: 0 0 6px #00aaff, 0 0 12px #00aaff, 0 0 20px #00aaff;
+        text-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff, 0 0 30px #00aaff;
         color: #00aaff;
       }
       50% {
-        text-shadow: 0 0 3px #0088cc, 0 0 6px #0088cc, 0 0 10px #0099dd;
+        text-shadow: 0 0 5px #0088cc, 0 0 10px #0088cc, 0 0 15px #0099dd;
         color: #33bbff;
       }
     }
@@ -93,29 +110,55 @@
     header nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 20px;
     }
 
     header nav a {
       color: #aaddff;
-      font-weight: 600;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header nav a:hover,
+    header nav a:focus {
+      background-color: #004a99;
+      color: white;
+      outline: none;
     }
 
     .menu {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      background-color: #333;
-      padding: 12px;
+      gap: 12px;
+      background-color: #003366;
+      padding: 15px 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      border-radius: 12px;
+      margin: 20px auto;
+      max-width: 960px;
     }
 
     .menu a {
       background-color: #ff4d4d;
       color: white;
-      font-weight: bold;
-      padding: 10px 15px;
-      border-radius: 8px;
+      font-weight: 700;
+      padding: 12px 18px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(255, 77, 77, 0.5);
+      flex: 1 1 120px;
+      text-align: center;
+      transition: background-color 0.4s ease, box-shadow 0.3s ease;
+    }
+
+    .menu a:hover,
+    .menu a:focus {
+      background-color: #e63939;
+      box-shadow: 0 4px 10px rgba(230, 57, 57, 0.7);
+      outline: none;
     }
 
     h1 {
@@ -123,67 +166,124 @@
       font-family: 'Playfair Display', serif;
       background-color: #4da6ff;
       color: white;
-      padding: 20px;
-      font-size: clamp(2rem, 5vw, 4rem);
+      padding: 25px 15px;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
       animation: verticalBounce 3s ease-in-out infinite;
-      margin: 20px 0;
+      margin: 30px auto;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(77, 166, 255, 0.7);
+      user-select: none;
     }
 
     @keyframes verticalBounce {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      50% { transform: translateY(-12px); }
     }
 
     .columns {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap; /* ici modifié */
       justify-content: center;
-      gap: 20px;
-      padding: 20px;
+      gap: 25px;
+      padding: 0 15px 40px;
+      max-width: 980px;
+      margin: 0 auto;
     }
 
     .colonne {
-      width: 100%;
-      max-width: 320px;
       background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      border: 2px solid #3399ff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 25px 20px;
+      border-radius: 14px;
+      border: 2px solid transparent;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      flex: 1 1 300px;
+      max-width: 320px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+
+    .colonne:hover,
+    .colonne:focus-within {
+      border-color: #3399ff;
+      box-shadow: 0 10px 20px rgba(51, 153, 255, 0.3);
     }
 
     .col1 { background-color: #e6ffe6; }
     .col2 { background-color: #ffe6e6; }
     .col3 { background-color: #ffffe6; }
 
+    .colonne strong {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      display: inline-block;
+      color: #004080;
+      user-select: none;
+    }
+
+    .colonne ul,
+    .colonne ol {
+      padding-left: 20px;
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
     .btn {
       display: inline-block;
       margin-top: 15px;
-      padding: 10px 20px;
+      padding: 12px 25px;
       background-color: #004080;
       color: white;
-      font-weight: 600;
-      border-radius: 8px;
+      font-weight: 700;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,64,128,0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
     }
 
-    .btn:hover {
+    .btn:hover,
+    .btn:focus {
       background-color: #0066cc;
+      box-shadow: 0 6px 15px rgba(0,102,204,0.8);
+      outline: none;
     }
 
     #info-general {
-      margin: 20px auto;
-      padding: 20px;
+      margin: 40px auto;
+      padding: 30px 25px;
       background-color: #f9f9f9;
       border: 2px solid #004080;
-      border-radius: 12px;
+      border-radius: 16px;
       width: 95%;
-      max-width: 900px;
+      max-width: 920px;
+      box-shadow: 0 6px 15px rgba(0,64,128,0.2);
     }
 
     #info-general h3 {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       color: #004080;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      user-select: none;
+    }
+
+    #info-general p {
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    #info-general p strong {
+      color: #004080;
+    }
+
+    #info-general div {
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+      color: #555;
+      font-style: italic;
+      font-weight: 600;
     }
 
     footer {
@@ -191,36 +291,51 @@
       color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
+      margin-top: auto;
+      font-weight: 600;
+      box-shadow: 0 -3px 8px rgba(0,0,0,0.2);
+      user-select: none;
     }
 
     /* RESPONSIVE MOBILE */
-    @media (max-width: 600px) {
-      .logo {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-      }
-
+    @media (max-width: 800px) {
       header {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      .columns {
-        flex-direction: column;
+      .logo {
+        flex-direction: row;
         align-items: center;
+        margin-bottom: 15px;
       }
 
       header nav {
         justify-content: flex-start;
+        gap: 15px;
+        width: 100%;
+      }
+
+      .menu {
+        max-width: 100%;
+        padding: 15px 5px;
         gap: 10px;
-        margin-top: 10px;
       }
 
       .menu a {
         flex: 1 1 45%;
-        text-align: center;
+        padding: 10px 10px;
+        font-size: 0.9rem;
+      }
+
+      .columns {
+        flex-wrap: wrap; /* ici aussi modifié */
+        padding-bottom: 20px;
+      }
+
+      .colonne {
+        max-width: 100%;
+        width: 90%;
       }
     }
   </style>
@@ -229,7 +344,7 @@
 
   <header>
     <div class="logo">
-      <img src="logo.png" alt="Logo">
+      <img src="logo.png" alt="Logo de la boutique Boutiqualité" />
       <span>Boutiqualité</span>
     </div>
     <nav>
@@ -237,7 +352,7 @@
     </nav>
   </header>
 
-  <div class="menu">
+  <div class="menu" role="navigation" aria-label="Menu principal">
     <a href="partenaire.html">PARTENAIRES</a>
     <a href="photos.html">NOS PHOTOS</a>
     <a href="produits.html">PRODUITS</a>
@@ -246,7 +361,11 @@
     <a href="Fournisseur.html">FOURNISSEUR DE PRODUITS</a>
     <a href="Activites.html">ACTIVITÉ DE BOUTIQUE</a>
   </div>
+
+
+
   <div class="columns">
+    <section class="columns">
     <div class="colonne col1">
       <strong>NOS ACTIVITÉS</strong><br><br>
       <ul>
@@ -257,8 +376,9 @@
         <li>CRÉATIVITÉ</li>
       </ul>
       <a href="Activites.html" class="btn">En savoir plus</a>
-    </div>
+    </section>
 
+    <section class="columns">
     <div class="colonne col2">
       <strong>AVEC QUI NOUS TRAVAILLONS</strong><br><br>
       <ol>
@@ -271,8 +391,8 @@
         <li>ADIDAS</li>
       </ol>
       <a href="partenaire.html" class="btn">Voir nos partenaires</a>
-    </div>
-
+    </section>
+<section class="columns">
     <div class="colonne col3">
       <strong>VALEURS ET OBJECTIFS</strong><br><br>
       <ul>
@@ -282,24 +402,37 @@
         <li>Respecter l'environnement</li>
       </ul>
       <a href="Info.html" class="btn">Voir info général</a>
-    </div>
+    </section>
   </div>
 
-  <div id="info-general">
-    <h3>📌 INFO GÉNÉRAL</h3>
+<section id="info-general" tabindex="0" aria-label="Informations générales">
+  <h2>📌 Informations Générales</h2>
+
+  <div class="contact-infos">
     <p><strong>📞 Téléphone :</strong> +243 0904649754</p>
     <p><strong>✉️ Email :</strong> contact@boutique.com</p>
     <p><strong>📘 Facebook :</strong> Boutiqualité</p>
     <p><strong>💬 WhatsApp :</strong> 0859760507</p>
     <p><strong>📍 Adresse :</strong> Boma, RDC</p>
-
-    <div style="margin-top: 15px; border-top: 1px solid #ccc; padding-top: 15px;">
-      <h4>💬 Commentaires sur notre boutique :</h4>
-      <p><i>“Service rapide et très professionnel.”</i> – <strong>Marie K.</strong></p>
-      <p><i>“Produits de qualité à un prix raisonnable.”</i> – <strong>Patrick M.</strong></p>
-      <p><i>“Super service client, très à l’écoute.”</i> – <strong>Jacques T.</strong></p>
-    </div>
   </div>
+
+  <div class="commentaires">
+    <h3>💬 Commentaires sur notre boutique</h3>
+    <p><i>“Service rapide et très professionnel.”</i> – <strong>Marie K.</strong></p>
+    <p><i>“Produits de qualité à un prix raisonnable.”</i> – <strong>Patrick M.</strong></p>
+    <p><i>“Super service client, très à l’écoute.”</i> – <strong>Jacques T.</strong></p>
+  </div>
+
+  <div class="contact-button">
+    <button onclick="window.location.href='mailto:contact@boutique.com'">
+      ✉️ Nous Contacter
+    </button>
+  </div>
+</section>
+
+
+    </div>
+  </section>
 
   <footer>
     © 2025 Boutiqualité - Tous droits réservés.
