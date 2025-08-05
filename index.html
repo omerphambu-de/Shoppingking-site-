@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -16,6 +16,16 @@
   <!-- Styles -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     body {
       margin: 0;
       padding: 0;
@@ -24,28 +34,107 @@
                   url('image.avif') no-repeat center center fixed;
       background-size: cover;
     }
+
+    header {
+      background-color: #002244;  /* bleu pro foncé */
+      padding: 15px 30px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      border: 2px solid white;   /* bordure blanche */
+      padding: 5px 12px;
+      border-radius: 8px;
+      background-color: rgba(0, 34, 68, 0.6); /* fond bleu semi-transparent */
+    }
+
+    .logo img {
+      height: 55px;
+      margin-right: 15px;
+    }
+
+    /* Animation glow + bounce sur le texte BOUTIQUALITÉ */
+    @keyframes glowPulse {
+      0%, 100% {
+        text-shadow:
+          0 0 6px #00aaff,
+          0 0 12px #00aaff,
+          0 0 20px #00aaff,
+          0 0 30px #00c0ff,
+          0 0 40px #00c0ff;
+        color: #00aaff;
+      }
+      50% {
+        text-shadow:
+          0 0 3px #0088cc,
+          0 0 6px #0088cc,
+          0 0 10px #0099dd,
+          0 0 15px #00aaff,
+          0 0 20px #00aaff;
+        color: #33bbff;
+      }
+    }
+
+    @keyframes bounceFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .logo span {
+      font-size: 28px;
+      font-weight: 900;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      user-select: none;
+      animation: glowPulse 3s ease-in-out infinite, bounceFloat 4s ease-in-out infinite;
+      cursor: default;
+    }
+
+    header nav a {
+      color: #aaddff;
+      margin: 0 18px;
+      font-weight: 600;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: color 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: #00aaff;
+      text-decoration: underline;
+    }
+
     .menu {
       display: flex;
       justify-content: space-around;
       background-color: #333;
       padding: 12px;
     }
+
     .menu a {
       background-color: #ff4d4d;
       color: white;
       font-weight: bold;
       padding: 10px 15px;
-      text-decoration: none;
       border-radius: 8px;
       transition: background-color 0.3s ease;
     }
+
     .menu a:hover {
       background-color: #cc0000;
     }
+
     @keyframes verticalBounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-20px); }
     }
+
     h1 {
       font-family: 'Playfair Display', serif;
       background-color: #4da6ff;
@@ -59,6 +148,7 @@
       margin: 20px 0;
       animation: verticalBounce 3s ease-in-out infinite;
     }
+
     .columns {
       display: flex;
       justify-content: space-around;
@@ -66,6 +156,7 @@
       padding: 20px;
       flex-wrap: wrap;
     }
+
     .colonne {
       width: 30%;
       background-color: white;
@@ -75,47 +166,137 @@
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       box-sizing: border-box;
+      position: relative;
     }
+
     .col1 { background-color: #e6ffe6; }
     .col2 { background-color: #ffe6e6; }
     .col3 { background-color: #ffffe6; }
-    .vertical-col {
-      background-color: white;
-      border: 2px solid #4da6ff;
-      border-radius: 12px;
-      margin: 30px auto;
-      width: 90%;
-      padding: 25px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #004080;
+      color: white;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 64, 128, 0.4);
     }
-    .vertical-col h3 {
-      margin-top: 0;
-      font-size: 24px;
+
+    .btn:hover {
+      background-color: #0066cc;
+      box-shadow: 0 6px 14px rgba(0, 102, 204, 0.6);
+    }
+
+    .grille-sites {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      justify-items: center;
+    }
+
+    .carte {
+      width: 100px;
+      text-align: center;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 10px;
+      transition: transform 0.3s;
+    }
+
+    .carte:hover {
+      transform: scale(1.05);
+    }
+
+    .carte img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .carte p {
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: bold;
       color: #333;
     }
-    ul, ol { padding-left: 20px; }
-    p { line-height: 1.6; }
+
+    .video-int {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 120px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    #accueil {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(to right, #f0f4f8, #dceeff);
+    }
+
+    #accueil h2 {
+      font-size: 2.2rem;
+      color: #004080;
+      margin-bottom: 20px;
+    }
+
+    #accueil p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    #accueil a {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background-color: #004080;
+      color: white;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <!-- Bloc photo de profil -->
-  <div style="text-align: center; margin-top: 20px;">
-    <img src="profil.jpeg" alt="Photo de profil" style="width: 150px; height: 150px; border-radius: 50%; border: 3px solid #4da6ff; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
-    <p style="font-weight: bold; margin-top: 10px;">PHAMBU VUNDULA OMER</p>
-  </div>
 
-  <!-- Menu -->
+  <!-- Barre de navigation avec logo -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo BOUTIQUALITÉ" />
+      <span>BOUTIQUALITÉ</span>
+    </div>
+    <nav>
+      <a href="#accueil">ACCUEIL</a>
+    </nav>
+  </header>
+
+  <!-- Menu secondaire -->
   <div class="menu">
     <a href="partenaire.html">PARTENAIRES</a>
     <a href="photos.html">NOS PHOTOS</a>
     <a href="produits.html">PRODUITS</a>
     <a href="points.html">POINTS DE VENTE</a>
+    <a href="Info.html">INFO GENERAL</a>
+    <a href="Fournisseur.html">FOURNISSEUR DE PRODUITS</a>
+    <a href="Activites.html">ACTIVITÉ DE BOUTIQUE</a>
   </div>
 
-  <!-- Titre principal -->
-  <h1>BOUTIQUE</h1>
-
-  <!-- Trois colonnes -->
+  <!-- Colonnes -->
   <div class="columns">
     <div class="colonne col1">
       <strong>NOS ACTIVITÉS</strong><br><br>
@@ -127,8 +308,8 @@
         <li>COMMUNICATION</li>
         <li>CRÉATIVITÉ</li>
       </ul>
+      <a href="activites.html" class="btn">En savoir plus</a>
     </div>
-
     <div class="colonne col2">
       <strong>AVEC QUI NOUS TRAVAILLONS</strong><br><br>
       Notre BOUTIQUE travaille en partenariat avec :
@@ -139,9 +320,10 @@
         <li>CHICAGO</li>
         <li>HERMÈS</li>
         <li>PUMA</li>
+        <li>ADIDAS</li>
       </ol>
+      <a href="partenaire.html" class="btn">Voir nos partenaires</a>
     </div>
-
     <div class="colonne col3">
       <strong>VALEURS ET OBJECTIFS</strong><br><br>
       Notre boutique vise à :
@@ -151,21 +333,33 @@
         <li>Encourager la créativité locale</li>
         <li>Respecter l'environnement</li>
       </ul>
+      <a href="Info.html" class="btn">Voir info général</a>
     </div>
-<!-- Présentation vidéo professionnelle -->
-<section style="width: 100%; max-width: 640px; margin: 20px auto 40px;">
-  <h2 style="text-align:center; font-size: 1.8rem; color:#004080; font-weight:700; margin-bottom: 20px;">
-    🎥 Présentation de la Boutique
-  </h2>
-  <video 
-    controls 
-    style="width: 100%; border-radius: 12px; box-shadow: 0 8px 15px rgba(0,0,0,0.1);"
-  >
-    <source src="music.mp4" type="video/mp4" />
-    Votre navigateur ne supporte pas la lecture de la vidéo.
-  </video>
-</section>
+  </div>
 
-</div>
+  <!-- Info général -->
+  <div id="info-general" class="vertical-col" style="position: relative; background-color: #f9f9f9; border: 2px solid #004080; padding: 25px; border-radius: 12px; width: 95%; margin: 30px auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); font-family: Arial, sans-serif;">
+    <h3 style="font-weight: bold; font-size: 1.8rem; color: #004080; margin-bottom: 20px;">
+      📌 INFO GÉNÉRAL
+      <p> Nos contacts:</p> 
+    </h3>
+    <div style="margin-bottom: 20px;">
+      <p><strong>📞 Téléphone :</strong> +243 0904649754</p>
+      <p><strong>✉️ Email :</strong> contact@boutique.com</p>
+      <p><strong>📘 Facebook :</strong> Boutiqualité</p>
+      <p><strong>💬 WhatsApp :</strong> 0859760507</p>
+      <p><strong>📍 Adresse :</strong> Boma, RDC</p>
+    </div>
+
+    <div style="margin-top: 15px;">
+      <div style="border-top: 1px solid #ccc; padding-top: 15px;">
+        <h4 style="font-size: 1.3rem; color: #333; margin-bottom: 10px;">💬 Commentaires sur notre boutique :</h4>
+        <p style="margin: 10px 0; font-style: italic;">“Service rapide et très professionnel. J’ai reçu ma commande en moins de 24h !” – <strong>Marie K.</strong></p>
+        <p style="margin: 10px 0; font-style: italic;">“Produits de qualité à un prix raisonnable. Je recommande vivement.” – <strong>Patrick M.</strong></p>
+        <p style="margin: 10px 0; font-style: italic;">“Super service client, très à l’écoute. Merci pour l’accueil.” – <strong>Jacques T.</strong></p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

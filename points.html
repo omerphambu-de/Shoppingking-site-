@@ -14,8 +14,7 @@
     }
 
     body {
-
-  margin: 0;
+      margin: 0;
       font-family: 'Montserrat', sans-serif;
       background: 
         linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
@@ -26,7 +25,28 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 30px 20px;}
+      padding: 30px 20px;
+    }
+
+    /* Style du bouton retour */
+    .btn-retour {
+      align-self: flex-start; /* bouton aligné à gauche */
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      font-weight: bold;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      font-size: 1rem;
+      display: inline-block;
+    }
+    .btn-retour:hover {
+      background-color: #0066cc;
+    }
 
     h1 {
       color: #0073e6;
@@ -105,10 +125,12 @@
         height: 150px;
       }
     }
-
   </style>
 </head>
 <body>
+
+  <!-- Bouton retour -->
+  <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
 
   <h1>Points de Vente</h1>
 
@@ -155,13 +177,9 @@
 
   </div>
 <br>
-<b>
-<b>
-  <footer>
-    &copy; 2025 BOUTIQUE - Tous droits réservés
-  </footer>
-<b>
-<b>
-<b>
+<footer>
+  &copy; 2025 BOUTIQUE - Tous droits réservés
+</footer>
+
 </body>
 </html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Activités - Boutiqualité</title>
+  <style>
+    body 
+{
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(rgba(255,255,255,0.30), rgba(255,255,255,0.30)),
+                  url('image.avif') no-repeat center center fixed;
+      background-size: cover;
+    }
+{
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f9ff;
+      color: #333;
+    }
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px;
+    }
+    h2 {
+      color: #004080;
+      margin-top: 40px;
+    }
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .activity-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .activity-card:hover {
+      transform: translateY(-5px);
+    }
+    .activity-card h3 {
+      margin-top: 0;
+      color: #004080;
+    }
+    .activity-card p {
+      font-size: 0.95rem;
+    }
+    .activity-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #eee;
+      margin-top: 50px;
+      color: #555;
+    }
+    /* Bouton Retour Accueil */
+    .btn-retour {
+      display: inline-block;
+      margin: 40px auto 0 auto;
+      padding: 12px 25px;
+      background-color: #004080;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+    .btn-retour:hover {
+      background-color: #002850;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Boutiqualité</h1>
+    <p>Découvrez toutes nos activités et services à Boma</p>
+  </header>
+
+  <main>
+    <h2>Nos Activités</h2>
+    <div class="activity-grid">
+      <div class="activity-card">
+        <div class="activity-icon">⌚</div>
+        <h3>Montres connectées</h3>
+        <p>Nous proposons une gamme de montres connectées pour le sport, la santé et la vie quotidienne.</p>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">📱</div>
+        <h3>Accessoires électroniques</h3>
+        <p>Câbles, chargeurs, écouteurs, coques, batteries portables – tout pour vos appareils.</p>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">👕</div>
+        <h3>Vêtements tendance</h3>
+        <p>Nous vendons des habits stylés pour hommes et femmes, adaptés à tous les goûts.</p>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">🔧</div>
+        <h3>Réparation téléphone</h3>
+        <p>Nous offrons un service de dépannage pour téléphones cassés ou défectueux à des prix abordables.</p>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">🚚</div>
+        <h3>Livraison à domicile</h3>
+        <p>Recevez vos commandes partout à Boma sans vous déplacer, avec fiabilité et rapidité.</p>
+      </div>
+      <div class="activity-card">
+        <div class="activity-icon">🎁</div>
+        <h3>Commandes personnalisées</h3>
+        <p>Commandez des articles spécifiques que nous importons pour vous rapidement.</p>
+      </div>
+      <div class="photo-card" onclick="alert('Produit 20 ajouté au panier !')" style="max-width: 300px; border: 1px solid #ccc; border-radius: 10px; padding: 10px; box-shadow: 2px 2px 8px rgba(0,0,0,0.1);">
+        <video controls style="width: 100%; border-radius: 8px;">
+          <source src="linh.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture de vidéo.
+        </video>
+        <div class="photo-description" style="margin-top: 10px; font-weight: bold; text-align: center;">
+          Voici la vidéo de la présentation de notre boutique 
+        </div>
+        <button class="buy-btn" style="margin-top: 10px; background-color: #004080; color: white; padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer; width: 100%;">
+          Regarder 
+        </button>
+      </div>
+    </div>
+
+    <!-- Bouton Retour Accueil -->
+    <div style="text-align: center;">
+      <a href="index.html" class="btn-retour">← Retour à l’accueil</a>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Boutiqualité - Tous droits réservés.
+  </footer>
+
+</body>
+</html>

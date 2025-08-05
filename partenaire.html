@@ -6,9 +6,9 @@
   <style>
      * {
       box-sizing: border-box;
+   }
    body {
-  margin: 0;
-  margin: 0;
+      margin: 0;
       font-family: 'Montserrat', sans-serif;
       background: 
         linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
@@ -19,8 +19,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 30px 20px;}
-}
+      padding: 30px 20px;
+   }
     h1 {
       color: #0056b3;
       margin-bottom: 40px;
@@ -94,6 +94,27 @@
       padding: 15px 25px;
       border-radius: 10px;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 1000px;
+      text-align: center;
+    }
+
+    /* Bouton Retour Accueil */
+    .btn-retour {
+      display: inline-block;
+      margin: 40px auto 0 auto;
+      padding: 12px 25px;
+      background-color: #004080;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+    .btn-retour:hover {
+      background-color: #002850;
     }
   </style>
 </head>
@@ -132,6 +153,11 @@
       <div class="partner-name">PUMA</div>
       <div class="partner-comment">PUMA allie style et performance dans ses articles de sport innovants et dynamiques.</div>
     </div>
+  </div>
+
+  <!-- Bouton Retour Accueil -->
+  <div style="width: 100%; max-width: 1000px; text-align: center; margin: 40px auto 0 auto;">
+    <a href="index.html" class="btn-retour">← Retour à l’accueil</a>
   </div>
 
   <footer>

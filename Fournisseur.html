@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avec qui nous travaillons</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(rgba(255,255,255,0.30), rgba(255,255,255,0.30)),
+                  url('image.avif') no-repeat center center fixed;
+      background-size: cover;
+      color: #222;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin: 30px 0 20px 0;
+      font-weight: 700;
+      color: #111;
+      text-shadow: 0 2px 6px rgba(255,255,255,0.8);
+    }
+
+    /* Intro section pro, glass effect */
+    .intro-section {
+      max-width: 900px;
+      margin: 0 auto 60px auto;
+      background: rgba(255 255 255 / 0.25);
+      border-radius: 14px;
+      padding: 30px 40px;
+      box-shadow: 0 12px 30px rgb(0 0 0 / 0.10);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #222;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.45rem;
+      line-height: 1.6;
+      font-style: italic;
+      font-family: 'Segoe UI Semibold', Tahoma, Geneva, Verdana, sans-serif;
+      letter-spacing: 0.04em;
+      animation: fadeInUp 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 35px;
+      max-width: 1100px;
+      margin: 0 auto 60px auto;
+    }
+
+    .partner-card {
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+      padding: 25px 20px;
+      text-align: center;
+      cursor: default;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .partner-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    }
+
+    .partner-logo {
+      max-width: 140px;
+      max-height: 90px;
+      object-fit: contain;
+      margin-bottom: 18px;
+      filter: grayscale(0.4);
+      transition: filter 0.3s ease;
+    }
+    .partner-card:hover .partner-logo {
+      filter: grayscale(0);
+    }
+
+    .partner-name {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .partner-description {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.4;
+      min-height: 65px;
+      padding: 0 5px;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      body {
+        padding: 30px 15px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .partners-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .intro-section {
+        font-size: 1.2rem;
+        padding: 20px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Avec qui nous travaillons</h1>
+
+  <section class="intro-section">
+    Nous collaborons exclusivement avec des fournisseurs d’exception, reconnus mondialement, pour vous garantir qualité, élégance et innovation dans chaque produit que nous vous proposons.
+  </section>
+
+  <div class="partners-grid">
+
+    <div class="partner-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike" class="partner-logo" />
+      <div class="partner-name">Nike</div>
+      <div class="partner-description">Leader mondial des articles de sport innovants et performants.</div>
+    </div>
+
+    <div class="partner-card">
+      <img src="Zara.png" alt="Zara" class="partner-logo" />
+      <div class="partner-name">Zara</div>
+      <div class="partner-description">Marque emblématique de mode rapide et tendances actuelles.</div>
+    </div>
+
+    <div class="partner-card">
+      <img src="Chicago.png" alt="Chicago Bulls" class="partner-logo" />
+      <div class="partner-name">Chicago</div>
+      <div class="partner-description">Icône du sport et du style urbain, référence mondiale.</div>
+    </div>
+
+    <div class="partner-card">
+      <img src="Puma.png" alt="Puma" class="partner-logo" />
+      <div class="partner-name">Puma</div>
+      <div class="partner-description">Marque sportive alliant performance et design audacieux.</div>
+    </div>
+
+    <div class="partner-card">
+      <img src="luis.png" alt="Louis Vuitton" class="partner-logo" />
+      <div class="partner-name">Louis Vuitton</div>
+      <div class="partner-description">Symbole du luxe et de l'élégance dans la mode et accessoires.</div>
+    </div>
+
+    <div class="partner-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg" alt="Adidas" class="partner-logo" />
+      <div class="partner-name">Adidas</div>
+      <div class="partner-description">Expert en équipements sportifs et streetwear tendance.</div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin: 40px 0;">
+    <a href="index.html" 
+       style="display: inline-block; 
+              padding: 12px 25px; 
+              background-color: #004080; 
+              color: white; 
+              font-weight: 600; 
+              text-decoration: none; 
+              border-radius: 8px; 
+              box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+              transition: background-color 0.3s ease;">
+      ← Retour à l’accueil
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2025 Boutiqualité - Tous droits réservés.
+  </footer>
+</body>
+</html>
